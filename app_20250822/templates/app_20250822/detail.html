@@ -1,0 +1,18 @@
+<!-- 質問の段落を表示 -->
+{% for para in paragraphs %}
+    <h1>{{ para.paragraph_text }}</h1>
+{% endfor %}
+
+<!-- 選択肢をラジオボタンで表示 -->
+<ul>
+{% for answer in answers %}
+    <li>
+        <label>
+            <input type="radio" name="answer" value="{{ forloop.counter }}">
+            {{ answer.answer_text }}
+        </label>
+    </li>
+{% endfor %}
+</ul>
+
+</form>

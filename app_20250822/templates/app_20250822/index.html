@@ -1,0 +1,18 @@
+{% if questions_with_paragraphs %}
+    <ul>
+    {% for item in questions_with_paragraphs %}
+        <li>
+            <a href="{% url 'app_20250822:detail' item.question.id %}">
+                Question {{ item.question.id }}
+            </a>
+            <ul>
+            {% for para in item.paragraphs %}
+                <li>{{ para.paragraph_text }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No data available.</p>
+{% endif %}
