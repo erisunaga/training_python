@@ -1,0 +1,10 @@
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="/[アプリ名]/{{ question.id }}/">
+            {{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No datas are available.</p>
+{% endif %}
